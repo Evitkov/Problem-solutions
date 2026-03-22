@@ -18,11 +18,12 @@
 * is new for me hence why included it. The theory is simple in c++ these iterators are just pointers to memory
 * with expected size of entry. That means erase function expecting 2 iterators can just be given iterator a.begin() and
 * plus the index we want to delete which will create a new iterator - pointer by adding original adress and index*size of entry it knows by the iterator type.
-* This also means we can retrive our index just by substracting ref to start form ref to our index.
+* This also means we can retrieve our index just by subtracting ref to start form ref to our index. - this is of course true only for vectors and other structures
+* that store their elements in sequence in memory otherwise this would not work.
 *
-* The solution is then just simulation. We create the array and check if we can reach the win condition. If yes then if
+* The solution is then just simulation. We create the array and check if we can reach the win condition. If we can then if
 * total cost does not exceed m we update totalcost, wins and winIndex,playIndex - the index of card we play. If we cannot reach it we pick the cheapest card from start to k and we update playindex
-* to that. We also update totalcost and substract one from WinIndex since everything after k, which includes our win condition, will be moved by one.
+* to that. We also update totalcost and subtract one from WinIndex since everything after k, which includes our win condition, will be moved by one.
 * In the end we just erase the played card and add it to the back.
 *
 *

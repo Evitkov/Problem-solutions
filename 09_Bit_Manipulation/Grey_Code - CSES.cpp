@@ -2,12 +2,12 @@
  * PROBLEM: Gray Code (CSES)
  *
  * REAL-WORLD CONTEXT:
-* Standard binary is fine for doing math inside the cpu. But when you have to track physical states or move data across messy hardware boundaries,
-* normal binary is terrible because changing from 3 (011) to 4 (100) flips three wires at once. In the real physical world, wires don't flip perfectly at the exact same
-* nanosecond, so the system might accidentally read a garbage intermediate state like 111.
- * * Gray code fixes this by guaranteeing only one bit changes at a time. You see this used in physical sensors like rotary volume knobs (so a vibrating sensor doesn't glitch out reading a boundary),
- * in microchip design when passing memory pointers between a fast cpu and a slow network chip, and in wifi/5g where radio wave shapes are mapped using gray code
- * so a distorted signal only causes a tiny 1-bit error.
+* Standard binary is used for math like addition substraction etc. It is easy to do math with
+* and we have no reason to use gray code. Gray code is used for example for sensor readings wave transfers etc
+* where small distortion can cause a big distortion in the state we measured. This is because if we flip one more
+* bit for example for 7 0111 we get 15 1111 which is a really big error that can be caused by bad sensor reading.
+* This gray code after recieved is of course later converted to normal binary.
+* It might also be used for async operations inside our computer.
  *
  *
  * * PROBLEM DESCRIPTION:

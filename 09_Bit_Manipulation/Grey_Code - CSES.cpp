@@ -7,7 +7,7 @@
 * where small distortion can cause a big distortion in the state we measured. This is because if we flip one more
 * bit for example for 7 0111 we get 15 1111 which is a really big error that can be caused by bad sensor reading.
 * This gray code after recieved is of course later converted to normal binary.
-* It might also be used for pointers - (I think of them as shared values for 2 different processors) inside our pc
+* It might also be used for pointers - (I think of them as shared values for 2 different processors - hardware registers are used ) inside our pc
 * Because they have different clocks one could be updating the pointer while other is reading it - gray code again minimizes error.
  *
  *
